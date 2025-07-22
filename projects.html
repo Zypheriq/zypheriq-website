@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Zypheriq Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-box {
+      width: 280px;
+      max-height: 120px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(255, 0, 100, 0.3);
+      cursor: pointer;
+      transition: max-height 0.4s ease-in-out, box-shadow 0.4s ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-box.expanded {
+      max-height: 1000px; /* large enough to fit any text */
+      box-shadow: 0 0 30px #ff0077;
+    }
+
+    .project-box a {
+      pointer-events: none;
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    .project-box.expanded a {
+      pointer-events: auto;
+    }
+
+    .project-content {
+      opacity: 0;
+      margin-top: 1rem;
+      transition: opacity 0.4s ease;
+    }
+
+    .project-box.expanded .project-content {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <header>
+    <h1>Our Projects</h1>
+  </header>
+
+  <section id="projects">
+    <div class="projects-container">
+
+      <!-- Roblox -->
+      <div class="project-box">
+        <h3>Roblox</h3>
+        <div class="project-content">
+          <ul>
+            <li>
+              <a href="rogue-city.html"><strong>Rogue City</strong></a><br>
+              A gritty open-world roleplaying experience where chaos meets creativity. Rule the streets or uphold the law in Zypheriq’s flagship RP universe.
+            </li>
+            <li>
+              <a href="clicker-iv.html"><strong>Clicker IV</strong></a><br>
+              The ultimate idle grinding madness. Explode through progression in the fourth evolution of our legendary clicker franchise.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Web Apps -->
+      <div class="project-box">
+        <h3>Web Apps</h3>
+        <div class="project-content">
+          <ul>
+            <li>
+              <a href="flockr.html"><strong>Flockr</strong></a><br>
+              Your digital hive. Flockr is the future of social web apps – real-time messaging, profile sync, and the cleanest UI you'll ever touch.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phone Apps -->
+      <div class="project-box">
+        <h3>Phone Apps</h3>
+        <div class="project-content">
+          <ul>
+            <li>
+              <a href="flockr-mobile.html"><strong>Flockr</strong></a><br>
+              Flockr goes mobile – snap, share, chat and stay connected in the sleekest social app built for Gen Z and beyond.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const boxes = document.querySelectorAll('.project-box');
+    let activeBox = null;
+
+    boxes.forEach(box => {
+      box.addEventListener('click', e => {
+        if (e.target.tagName.toLowerCase() !== 'a') {
+          e.stopPropagation();
+          if (activeBox && activeBox !== box) {
+            activeBox.classList.remove('expanded');
+          }
+          box.classList.toggle('expanded');
+          activeBox = box.classList.contains('expanded') ? box : null;
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      if (activeBox) {
+        activeBox.classList.remove('expanded');
+        activeBox = null;
+      }
+    });
+  </script>
+  <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Zypheriq Studio. Copying is cringe. Ask before you take.</p>
+    <p>
+      <a href="mailto:contact@zypheriq.com">contact@zypheriq.com</a> |
+      <a href="projects.html">Projects</a> |
+      <a href="about.html">About</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
