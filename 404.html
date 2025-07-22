@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 | Zypheriq Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #ff0077;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+      animation: flickerBG 1.5s infinite alternate;
+    }
+
+    @keyframes flickerBG {
+      0% { background-color: #0a0a0a; }
+      100% { background-color: #0f0f0f; }
+    }
+
+    .glitch {
+      font-size: 4rem;
+      text-shadow: 0 0 5px #ff0077, 0 0 20px #ff0077;
+      animation: glitch 1.5s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(-1px, -1px); }
+      60% { transform: translate(1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    p {
+      color: #cccccc;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    a {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #ff0077;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: white;
+      color: #ff0077;
+      box-shadow: 0 0 15px #ff0077;
+    }
+
+    .noise {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center/cover no-repeat;
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="glitch">ERROR 404</div>
+  <p>Hey player,<br> seems you got lost on the way to your destination...</p>
+  <a href="index.html?from404=1">Return to Base</a>
+
+  <div class="noise"></div>
+
+  <audio autoplay loop>
+    <source src="sounds/flicker.mp3" type="audio/mp3" />
+  </audio>
+</body>
+</html>
