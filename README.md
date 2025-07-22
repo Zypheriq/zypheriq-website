@@ -74,7 +74,7 @@ Seriously. Message me. Teach me things. I will send memes in return.
 
 ```sh
 > accessing frontend node...
-> https://<your-username>.github.io/zypheriq
+> https://zypheriq.github.io/zypheriq-website/index.html
 ```
 
 *Link will work as soon as I stop messing it up.*
